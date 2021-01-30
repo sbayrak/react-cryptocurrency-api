@@ -4,6 +4,7 @@ import axios from 'axios';
 import Coin from './Coin';
 import firebaseApp from './firebase';
 
+console.log('hi');
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [coins, setCoins] = useState([]);
