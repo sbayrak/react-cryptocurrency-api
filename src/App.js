@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import Coin from './Coin';
-import firebaseApp from './firebase';
 
 console.log('hi');
 function App() {
