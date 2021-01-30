@@ -12,6 +12,7 @@ const Coin = ({
   marketcap,
   isLoading,
 }) => {
+  console.log(priceChange);
   return isLoading ? (
     <Spinner></Spinner>
   ) : (
@@ -25,10 +26,15 @@ const Coin = ({
         <div className='coin-data'>
           <p className='coin-price'> TRY {price} </p>
           <p className='coin-volume'> TRY {volume.toLocaleString()} </p>
-          {priceChange < 0 ? (
-            <p className='coin-percent red'> {priceChange.toFixed(2)}%</p>
+          {priceChange < 0 || priceChange === null ? (
+            <p className='coin-percent red'>
+              {' '}
+              {priceChange ? priceChange.toFixed(2) : '-'}{' '}
+            </p>
           ) : (
-            <p className='coin-percent green'> {priceChange.toFixed(2)}%</p>
+            <p className='coin-percent green'>
+              {priceChange ? priceChange.toFixed(2) : '-'}
+            </p>
           )}
           <p className='coin-marketcap'>
             Mkt Cap: TRY{marketcap.toLocaleString()}
